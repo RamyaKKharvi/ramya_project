@@ -5,90 +5,77 @@ for x_count in numbers:
     output = output + 'x'
   print(output)
 
+
 numbers = [20, 30, 200, 50, 60, 10, 1, 100]
-max = numbers[0]
+max_num = numbers[0]
 for number in numbers:
-  if number > max:
-     max = number
-print(max)
+  if number > max_num:
+     max_num = number
+print(max_num)
+
 
 matrix = [
-  [10, 20, 30],
- [30, 34, 36],
-[46, 48, 50]
+    [10, 20, 30],
+    [30, 34, 36],
+    [46, 48, 50]
 ]
 print(matrix[2][1])
 
+
 phone = input('Phone: ')
-in_words = {
-  1: 'One',
- 2: 'Two',
-3: 'Three',
-4: 'Four',
-  5: 'Five',
- 6: 'Six',
- 7: 'Seven',
- 8: 'Eight',
- 9: 'Nine',
-0: 'Zero'
-}
+in_words = {0: 'Zero', 1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five',
+            6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine'}
 for number in phone:
   print(in_words[int(number)], end = ' ')
 
-message = input('> ')
-emoji = {
-    ':)': '🙂',
-    ':(': '☹️',
-    ':|': '😐',
-    ': ': '😶',
-    ';)': '😉'
-}
+def emoji_converter(message):
+    msg = message.split(' ')
+    dict_emojis = {':)': '🙂', ':(': '☹️', ':|': '😐', ';)': '😉'}
+    output = ''
+    for word in msg:
+        output += dict_emojis.get(word, word) + ' '
+    return output
+
+my_message = input('msg> ')
+print(emoji_converter(my_message))
 
 
-print("Hi ", "kiran")
-print("Hello ", "uta ayta")
+def my_intro(my_name, my_age):
+    print("hi ", my_name, my_age)
 
-print("Hi ", "Ramya")
-print("Hi ", "Uta ayta")
-print("Hi ", name)
-    print("Hi ", "Uta ayta")
-
-def myfun(name, age):
-  print("hi ", name, age)
-   print("hello ","uta ayta")
-myfun("kiran", age=55)
-myfun("Ramya", 88)
+my_intro("kiran", 55)
+my_intro("Ramya", 88)
 
 
-def college(name, standard, rollno):
-   print(f'Iam', name, 'studying in', standard, 'std.', 'My roll no is', rollno)
-college('Ramya', '10', '21.')
+def school_details(my_name, standard, roll_no):
+   print(f'Iam {my_name} studying in {standard} std. My roll no is {roll_no}')
+school_details('Ramya', '10', '21')
 
-name = 'John'
-age = '20'
-is_new = True
-print(f'Iam', name, age, 'year old. and is', is_new)
 
 name = input('What is your name? ').capitalize()
 favorite_color = input('Favorite color? ').capitalize()
 print(name, 'likes', favorite_color)
+
 
 anniversary = input('Anniversary year: ')
 year = 2023 - int(anniversary)
 print('Happy', year, 'annivarsary.')
 print(2023 - int(input('Anniversary year: ')))
 
+
 weight_lbs = input('Weight(lbs): ')
 print(int(weight_lbs) * 0.45)
+
 
 name = 'RAMYA'
 print(name[1:-1])
 
 h = 'Hello'
-name = 'Ramya'
+name = 'Ram'
 age = 20
 favorite_color = 'blue'
 print(f"{h} myself {name}. Iam {age} year's old.")
+
 
 intro = 'Hello! have a great day'
 print(len(intro))
@@ -100,10 +87,10 @@ print(intro.find('g'))
 print(intro.find('have'))
 print(intro.replace('have', 'I had'))
 print(intro.replace('Hello! ', ''))
-
 print('have' in intro)
 print('Had' in intro)
 print(intro.title())
+
 
 print(100+3)
 print(100-3)
@@ -113,19 +100,22 @@ print(100 % 3)
 print(10 * 3)
 print(10 ** 3)
 
+
 x = 100
 x = x + 3
 print(x + 3)
 x += 3
 print(x)
 
+
 price = 1000000
 has_good_credit = False
- if has_good_credit:
+if has_good_credit:
    down_payment = price * 0.1
 else:
-  down_payment = price * 0.2
+   down_payment = price * 0.2
 print(f'down payment: {down_payment}')
+
 
 has_high_income = True
 has_good_credit = False
@@ -134,12 +124,14 @@ if has_high_income and has_good_credit:
 else:
   print('Not eligible for loan')
 
+
 has_high_income = True
 has_good_credit = True
 if not has_high_income and not has_good_credit:
   print('Not eligible for loan')
 else:
   print('Eligible for loan')
+
 
 temp = input('Temperature: ')
 if temp > '30':
@@ -149,6 +141,7 @@ elif temp < '30':
 else:
    print("It's neithor a hot nor a cold day")
 
+
 name = input('Name: ')
 if len(name) < 3:
    print('name must be aleast 3 character long')
@@ -157,14 +150,16 @@ elif len(name) > 50:
 else:
   print('name looks good')
 
+
 weight = int(input('Weight: '))
 unit = input('in (lb) or (kg): ')
 if unit == 'lb':
-   weight_lb = (weight) * 0.45
-  print(f'You are {weight} kilos.')
-else:
-  weight_kg = (weight) / 0.45
- print(f'You are {weight} pounds.')
+    weight_lb = (weight) * 0.45
+    print(f'You are {weight} kilos.')
+elif unit == 'kg':
+    weight_kg = (weight) / 0.45
+    print(f'You are {weight} pounds.')
+
 
 i = int(input('i: '))
 while i > 10:
@@ -172,18 +167,20 @@ while i > 10:
   i = i - 2
 print('done')
 
+
 secret_number = 9
 guess_count = 0
 guess_limit = 3
 while guess_count < guess_limit:
-  guess = int(input('Guess: '))
- guess_count += 1
- if guess == secret_number:
-    print('You won')
-   break
-
+    guess = int(input('Guess: '))
+    guess_count += 1
+    if guess == secret_number:
+        print('You won')
+        break
 else:
   print('Sorry you failed')
+
+
 letters = ['a', 'b', 'c', 'd']
 numbers = [5, 6, 1, 10, 2, 0, 4, 8, 9, 3, 7]
 numbers.sort()
@@ -226,14 +223,15 @@ print(letters)
 
 letter_index = letters.index('a')
 print(letter_index)
+
+
 lists = ['apple', 'banana', 'strawberry', 'orange', 'kiwi']
 letters = 'a, b, c, d, e, f, g, h, i'
 numbers = [-3, -2, -1, 0, 1, 2, 3]
-print(letters + ' is an alphabet but ' + numbers + ' are numbers.')
-print(f'{letters} is an alphabet but {numbers} are numbers.
+print(f'{letters} is an alphabet but {numbers} are numbers.')
+
 
 dictionary = dict(name='Ramya', age=22, gender='female' )
-
 d = {"ff":3, "gg":432}
 a = 1, 2, 3
 print(a)
@@ -245,18 +243,18 @@ def kk(name, **x):
 
 kk(age=5, name=88,ll=98897)
 
-'''def kk(a, b, *c):
+
+def kk(a, b, *c):
     print(a, b, *c)
 
 kk(1,2,3,4,5)
 
-u = (99,88,77)
-
-print(*)
 
 for z in range(0, 10):
     space = ' ' * z
     print(space + (9 - z) * ' *')
+
+
 def palindrome(z):
     b = z[::-1]
     if z == b:
@@ -265,10 +263,11 @@ def palindrome(z):
          return False
 y = palindrome('ramya')
 print(y)
-
 a = 'apple'
 print(palindrome('malayalam'))
 print(palindrome('ramya'))
+
+
 def fun(x):
     reverse_a = a[::-1]
     if a == reverse_a:
@@ -278,11 +277,13 @@ def fun(x):
 y = fun(a)
 print(y)
 
+
 a = [1, 2, 3, 4, 5]
 y = 1
 for x in a:
     y = x * y
 print(y)
+
 
 b = {1,2,3,4,5}
 print(sum(b))
@@ -292,6 +293,8 @@ print(sum(c))
 
 d = (1,2,3,4,5)
 print(sum(d))
+
+
 name = 'my name Is Ramya'
 print(name.upper())
 print(name.lower())
@@ -301,7 +304,6 @@ print(name.capitalize())
 b = name.replace('Ramya', 'Kiran')
 print(b)
 
-y = [1,2,3,3,2,1,1,5,8]
 
 def myfun(x):
     unique = set(x)
@@ -309,6 +311,7 @@ def myfun(x):
     return z
 a = myfun(y)
 print(a)
+
 
 my = [1,2,3,3,2,1,1,5,8]
 unique = set(my)
@@ -319,16 +322,20 @@ text = ['kiran', 'kharvi']
 text1 = set(text)
 print(text1)
 
-1
-1 2
-1 2 3
-1 2 3 4 5
+
+# 1
+# 1 2
+# 1 2 3
+# 1 2 3 4 5
+
+
 def fun():
     b = ''
     for x in range(1,6):
          b = b + ' ' + str(x)
          print(b)
 fun()
+
 
 def fun(x, y):
     for item in x:
@@ -338,7 +345,7 @@ def fun(x, y):
 c = fun([1,2,3,4,5], 2)
 print(c)
 
-num = [1,2,-5,6,-7,3,-4]
+
 def fun():
     for x in num:
         if x > 0:
@@ -346,6 +353,8 @@ def fun():
 fun()
 
 num = [2,11,12,14,1,9,22]
+
+
 def fun(x):
     min_num = 100
     for y in x:
@@ -354,12 +363,14 @@ def fun(x):
     return min_num
 z = fun(num)
 print(z)
-a = int(input('number: '))
 
+
+a = int(input('number: '))
 while a != 0:
     print('$')
     a = int(input('number: '))
     break
+
 
 a = 'None'
 while a:
@@ -368,20 +379,24 @@ word = {'name':'Ramya', 'age': 20, 'place': 'kundapur'}
 for x,y in word.items():
     print(x,y)
 
+
 for x in range(1,5):
     print(x, ' ')
     for y in range(x):
         print(y,end=' ')
+
 
 for x in range(1,6):
     for y in range(x):
         print(x,end='')
     print()
 
+
 for ooo in range(3):
     for a in range(1,6):
         print(a,end='')
     print()
+
 
 def fun(a):
     for b in range(1,a+1):
@@ -389,6 +404,7 @@ def fun(a):
             print(b,end='')
         print()
 fun(9)
+
 
 def fun():
     b = int(input('number: '))
@@ -402,6 +418,7 @@ def fun():
         print('number is neither even nor odd')
 
 fun()
+
 
 def fun():
     z = 1
@@ -424,6 +441,7 @@ def fun():
         z = int(input('\n[Enter 1 if yes: 0 if No]\nDo you want to continue?: '))
     print('\nCompleted')
 
+
 def fun(a):
     for b in range(1,a+1):
         for c in range(b):
@@ -432,7 +450,8 @@ def fun(a):
 
 fun(5)
 
-TO GET '#' IN 4 TIMES IN 4 LINES:
+
+# TO GET '#' IN 4 TIMES IN 4 LINES:
 def fun(x):
     for a in range (4):
         for y in range(4):
@@ -441,11 +460,13 @@ def fun(x):
 
 fun(4)
 
+
 r = 2 ** 3 ** 4
 print(r)
 print(2 ** 81)
 
-pass by reference
+# pass by reference
+
 
 def fun_1(a):
     a = 3
@@ -474,6 +495,7 @@ def fun_2(val):
     z = val + [50]
     print(val)
 
+
 def fun(val):
     b = val.append(30)
     a = val.pop()
@@ -485,6 +507,7 @@ print(n)
 fun_2(n)
 fun(n)
 print(n)
+
 
 def fun(a):
     count_even = count_odd = 0
@@ -500,26 +523,31 @@ y, z = fun(numbers)
 print('Even =', y)
 print('Odd =', z)
 
+
 def fun(a):
     a.append(3)
 num = [1,2]
 fun(num)
 print(num)
 
-Reverse numbers using indexing
+
+# list indexing
 num = [1,2,3,4,5,6,7,8,9,10]
 print(num[0:5][::-1])
 print(num[5:])
 
-  Nested list
+
+  # Nested list
 x = [1,2,3,[4,5,6,[7,8,9]]]
 print(x[3][3][1])
+
 
 t = [(1,9),(3,4),(3,5)]
 t.sort(key=lambda x: x[1])
 print(t)
 
-d = {'name': 'Ramya', 'age': 20, 'place': 'Kundapura'}
+
+d = {'name': 'Ramya', 'age': 20, 'place': 'kpur'}
 l_num = ['a','b','c','a','d','e','b','c']
 def fun_num(a):
     b = {}
@@ -534,6 +562,7 @@ def fun_num(a):
 r = fun_num(l_num)
 print(r)
 
+
 m = 'My name is Ramya'
 def fun(a, b):
     if b in a:
@@ -544,6 +573,8 @@ fun(m,'Ramya')
 
 a = ['R','a','R','l','o',' ','I','a','m',' ', 'R','a','m','y','a']
 b = 'Ramya'
+
+
 def fun(a,b):
     i = -1
     for x in a:
@@ -563,7 +594,9 @@ def fun(a,b):
 
 z = fun(a,b)
 print(z)
-STACK
+
+
+# STACK
 l_num = []
 def fun(a):
     q1 = 1
@@ -595,7 +628,8 @@ def fun(a):
 result = fun(l_num)
 print(result)
 
-QUEUE
+
+# QUEUE
 l_num = []
 def fun(a):
     n = 5
@@ -627,6 +661,7 @@ def fun(a):
 result = fun(l_num)
 print(result)
 
+
 def fun(a,b):
     try:
         c = a / b
@@ -637,6 +672,7 @@ def fun(a,b):
         print(c)
 fun(2,0)
 
+
 class Person:
   def __init__(self, name, age):
     self.name = name
@@ -646,6 +682,7 @@ p1 = Person("John", 36)
 
 print(p1.name)
 print(p1.age)
+
 
 class A(object):
     def __init__(self, something):
@@ -661,6 +698,7 @@ class B(A):
 
 obj = B("Something")
 
+
 class BasicClass:
     theVariable = 1
 
@@ -671,6 +709,7 @@ class ExampleClass:
 
 x = ExampleClass()
 print(x.name,x.age,x.place)
+
 
 class BirthdayBoy(object):
     def __init__(self, name, age):
@@ -691,6 +730,7 @@ print(id(x.age))
 
 print(x.age)
 
+
 class Salesperson:
     sales = 0
     def __init__(self, fname, lname):
@@ -707,6 +747,7 @@ x = Salesperson('Ramya', 'Kharvi')
 x.makesale(500)
 x.salesreport()
 
+
 class Vehicle:
     def __init__(self,maxspeed,mileage):
         self.maxspeed = maxspeed
@@ -714,6 +755,7 @@ class Vehicle:
 
 x = Vehicle(200, 20)
 print(x.maxspeed, x.mileage)
+
 
 class Vehicle:
     def __init__(self,name,maxspeed,mileage):
@@ -727,6 +769,7 @@ class Bus(Vehicle):
 a = Vehicle('School vehicle',250,25)
 b = Bus('School Volvo',180, 12)
 print(f'Vehicle Name:{b.name}\nSpeed: {b.maxspeed}\nMileage: {b.mileage}')
+
 
 class Vehicle:
     color = 'White'
@@ -752,22 +795,25 @@ print(f'Vehicle Name: {b.name}, Color: {b.color}, Maxspeed: {b.maxspeed}, Mileag
 print(f'Vehicle Name: {c.name}, Color: {c.color}, Maxspeed: {c.maxspeed}, Mileage: {c.mileage}')
 print(f'Vehicle Name: {d.name}, Color: {d.color}, Maxspeed: {d.maxspeed}, Mileage: {d.mileage}')
 
+
 class Vehicle:
     def __init__(self, name):
         self.name = name
 
     def seating_capacity(self, capacity):
-        fare_charge = capacity * 100
+        self.fare_charge = capacity * 100
 
     def fare(self):
+        pass
 
 class Bus(Vehicle):
     def fare(self):
-        maintainance_charge = fare_charge + 0.1
+        maintainance_charge = self.fare_charge + 0.1
         final_amount = maintainance_charge + 0.1
 
 a = Vehicle('school vehicle')
 a.seating_capacity(200)
+
 
 class Vehicle:
     def __init__(self, name,maxspeed,mileage):
@@ -786,6 +832,7 @@ b = Vehicle('Volvo', 200, 18)
 b.seating_capacity(55)
 print(b.capacity)
 print(f'The seating capacity of {b.name} is {b.capacity} passengers')
+
 
 class A:
     def __init__(self):
@@ -808,6 +855,7 @@ x.dis()
 
 list_range = list(range(1,101))
 
+
 def filter_list_by_multiple_of_given_num(x,y):
     return list(filter(lambda z: z % y == 0, x))
 new_list = filter_list_by_multiple_of_given_num(list_range,3)
@@ -817,6 +865,7 @@ print('NEWEST')
 newest_list = list(filter(lambda x: x % 4 == 0,list_range))
 print(newest_list)
 
+
 # FILTER
 #
 set_range = set(range(1,51))
@@ -825,20 +874,22 @@ divisible_by_3 = set(filter(lambda x:x % 3 == 0,set_range))
 
 print(divisible_by_3)
 
+
 # # MAP
 tup_num = (2,4,10,33,21,40,34,56,71,23,45,61,90)
 
 multiply_by3 = tuple(map(lambda x: x*3,tup_num))
 print(multiply_by3)
 
-# REDUCE
 
+# REDUCE
 from functools import reduce
 
 new_list = [20,34,2,1,6,7,8,9,98,65,30]
 
 subtract = reduce(lambda a,b: b-a,new_list)
 print(subtract)
+
 
 # filter
 list_num = [2,33,4,61,72,51,11,1,40,20,60]
@@ -847,10 +898,12 @@ divisible_by2 = list(filter(lambda x : x % 2 == 0,list_num))
 
 print(divisible_by2)
 
+
 # map
 sub_list_by2 = list(map(lambda x: x-2,divisible_by2))
 
 print(sub_list_by2)
+
 
 # reduce
 from functools import reduce
@@ -874,6 +927,7 @@ reduce_by_adding = reduce(lambda x,y: x*y, [2,3], 5)
 
 print(reduce_by_adding)
 
+
 class Student:
     def __init__(self,name,age,std,roll_no):
         self.name = name
@@ -893,6 +947,7 @@ print(stud.name, stud.age, stud.std, stud.roll_no)
 
 stud.height()
 stud.weight()
+
 
 # Public
 class Person:
@@ -920,7 +975,8 @@ print('Outside class', per1.age)
 
 print()
 
-Protected
+
+# Protected
 class Person:
     def __init__(self,name,age):
         self.name = name
@@ -944,6 +1000,7 @@ stud.Ramya()
 print('Outside class', per1._age)
 
 print()
+
 
 # Private
 class Person:
@@ -969,6 +1026,7 @@ stud.Ramya()
 
 print('Outside class', per1.__age)
 
+
 class MyEncapsulate():
     def __init__(self,name,age,balance):
          self.name =name
@@ -988,6 +1046,7 @@ encap.display_balance()
 encap.update_balance(500)
 
 encap.display_balance()
+
 
 from abc import ABC, abstractmethod
 
@@ -1011,6 +1070,7 @@ def my_func():
     print("Hello, World!")
 
 my_func()
+
 
 class Person:
     pass
@@ -1040,6 +1100,7 @@ class Male(Person):
 male = Male()
 print(male)
 
+
 num = [3,2,5,3,2,3,6,7,8,2]
 empty_list = []
 for x in num:
@@ -1060,6 +1121,7 @@ for x in num:
 
 print(list_a)
 
+
 def factorial_num(a):
     y = 1
     for x in range(1,a+1):
@@ -1069,7 +1131,8 @@ def factorial_num(a):
 num = factorial_num(2)
 print(num)
 
-recoursive function
+
+# recoursive function
 def fact(num):
     if num==0 or num==1:
         return 1
@@ -1078,17 +1141,18 @@ def fact(num):
 
 print(fact(3))
 
-less compile time
+
+# less compile time
 def fibonacci(n):
     fib_list = [0,1]
     for x in range(2,n):
         fib_list.append(fib_list[x-1] + fib_list[x-2])
     return fib_list
 # for sum return fib_list[n-1]
-
 print(fibonacci(8))
 
-more compile time
+
+# more compile time
 def fibonacci(n):
     fib = [0, 1]
     for x in range(2,n):
@@ -1097,6 +1161,7 @@ def fibonacci(n):
     return fib
 fibo = fibonacci(5)
 print(fibo)
+
 
 word = input('Word: ').lower()
 vowels = ['a', 'e', 'i', 'o', 'u']
@@ -1108,6 +1173,7 @@ for x in word:
         continue
 print(count)
 
+
 word = input('Word: ').lower()
 vowels = ['a', 'e', 'i', 'o', 'u']
 empt_dict = {}
@@ -1115,6 +1181,7 @@ for x in vowels:
     empt_dict[x] = word.count(x)
 
 print(empt_dict)
+
 
 word = input('Word: ').lower()
 vowels = ['a', 'e', 'i', 'o', 'u']
@@ -1130,12 +1197,14 @@ for x in vowels:
 
 print(empt_dict)
 
+
 def fun_str(word):
     reverse = word[::-1]
     return reverse
 print(fun_str('Ramya'))
 
 list_num = [3,1,7,8,9,0]
+
 
 def fun_list(num):
     left = 0
@@ -1152,6 +1221,7 @@ def fun_list(num):
             right = right - 1
 
 fun_list(10)
+
 
 class A:
     def __init__(self,name,age,place):
@@ -1176,6 +1246,7 @@ print(obj_a.place)
 print(obj_a._age)
 print(obj_a.__name)
 
+
 class A:
     def __init__(self,name,age):
         self._name = name
@@ -1190,6 +1261,7 @@ obja.fun()
 
 print(obja._name)
 
+
 def only_even(fun):
     def inner_even(*b):
         z = list(filter(lambda x:x % 2 == 0,b))
@@ -1201,6 +1273,7 @@ def fun_num(*b):
     print(*b)
 
 fun_num(4,5,6,7,8,9,10)
+
 
 class Encapsul:
     def __init__(self, place):
@@ -1653,6 +1726,7 @@ print()
 print(api_call.post_data('createdAt'))
 print(api_call_3.put_data())
 
+
 import requests
 
 class Student:
@@ -1693,6 +1767,7 @@ stud.update_stud_data()
 # stud.delete_stud_data()
 stud.get_all_stud_data()
 
+
 def fun_file():
     name = input('Name: ').capitalize()
     age = int(input('Age: '))
@@ -1705,6 +1780,7 @@ def fun_file():
         print('Invalid ph_no or age. Please enter 10 digit Phone no or proper age.')
 
 fun_file()
+
 
 def create_my_file():
     name = input('Name: ').title()
@@ -1719,6 +1795,7 @@ def create_my_file():
 
 
 create_my_file()
+
 
 import requests
 import csv
@@ -1741,6 +1818,7 @@ def csv_file_fun():
 
 
 csv_file_fun()
+
 
 import requests
 import xlsxwriter
@@ -1777,6 +1855,8 @@ def csv_file_fun():
 csv_file_fun()
 
 print("Generator")
+
+
 def generator_fun(max_num):
     num = 1
     while num <= max_num:
@@ -1811,6 +1891,7 @@ for num in iter_obj:
     print(num)
 iter(iter_obj)
 
+
 import requests
 
 
@@ -1839,6 +1920,7 @@ api_obj.get_api_data()
 api_obj.create_store_data_in_file('/Users/kavyavagle/Document/reqres_api_data_file.json')
 api_obj.display_api_data()
 
+
 def range_num(val):
 
     # base condition
@@ -1852,6 +1934,7 @@ def range_num(val):
 
 range_num(5)
 
+
 def sum_num(num):
     if num == 0:
         return num
@@ -1861,6 +1944,7 @@ def sum_num(num):
 
 print('Sum of numbers =', sum_num(5))
 
+
 def multiply_num(num):
     if num == 1:
         return num
@@ -1869,6 +1953,7 @@ def multiply_num(num):
         return multiplication
 
 print('Multiplication of numbers =', multiply_num(5))
+
 
 def fibonacci_series(num):
     if num == 1 or num == 0:
@@ -1881,6 +1966,7 @@ def fibonacci_series(num):
 
 
 print(fibonacci_series(5))
+
 
 def binary_search(list_num, desired_num):
     list_num.sort()
@@ -1938,7 +2024,7 @@ class ReqresApi:
 
 
 req_api_obj = ReqresApi('https://reqres.in/api/users/')
- req_api_obj.get_api()
+req_api_obj.get_api()
 req_api_obj.display_api()
 req_api_obj.syn_api()
 
@@ -1952,4 +2038,3 @@ def create_file():
 
 
 create_file()
-
