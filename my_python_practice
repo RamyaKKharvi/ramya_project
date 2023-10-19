@@ -47,7 +47,7 @@ def emoji_converter(message):
 my_message = input('msg> ')
 print(emoji_converter(my_message))
 
-# ************** My introduction ************************
+# ************** My introduction (output method) ************************
 
 def my_intro(my_name, my_age):
     print("hi ", my_name, my_age)
@@ -61,30 +61,25 @@ def school_details(my_name, standard, roll_no):
    print(f'Iam {my_name} studying in {standard} std. My roll no is {roll_no}')
 school_details('Ramya', '10', '21')
 
-# ***************************************************
+# ******************* string capitalize() method ********************************
 
 name = input('What is your name? ').capitalize()
 favorite_color = input('Favorite color? ').capitalize()
 print(name, 'likes', favorite_color)
 
-# ***************************************************
+# ******************* input and output method *******************************
 
 anniversary = input('Anniversary year: ')
 year = 2023 - int(anniversary)
 print('Happy', year, 'annivarsary.')
 print(2023 - int(input('Anniversary year: ')))
 
-# ***************************************************
-
-weight_lbs = input('Weight(lbs): ')
-print(int(weight_lbs) * 0.45)
-
-# ***************************************************
+# ******************* string slicing method ********************************
 
 name = 'RAMYA'
 print(name[1:-1])
 
-# ***************************************************
+# ******************** string formatting *******************************
 
 h = 'Hello'
 name = 'Ram'
@@ -92,7 +87,7 @@ age = 20
 favorite_color = 'blue'
 print(f"{h} myself {name}. Iam {age} year's old.")
 
-# ***************************************************
+# ********************* various string method ******************************
 
 intro = 'Hello! have a great day'
 print(len(intro))
@@ -108,7 +103,18 @@ print('have' in intro)
 print('Had' in intro)
 print(intro.title())
 
-# ***************************************************
+# ********************* various string method ******************************
+
+name = 'my name Is Ramya'
+print(name.upper())
+print(name.lower())
+print(name.casefold())
+print(name.title())
+print(name.capitalize())
+b = name.replace('Ramya', 'Kiran')
+print(b)
+
+# ********************** mathematical operations *****************************
 
 print(100+3)
 print(100-3)
@@ -118,7 +124,7 @@ print(100 % 3)
 print(10 * 3)
 print(10 ** 3)
 
-# ***************************************************
+# ********************** addition *****************************
 
 x = 100
 x = x + 3
@@ -126,7 +132,7 @@ print(x + 3)
 x += 3
 print(x)
 
-# ***************************************************
+# ******************** calculating down payment using if and else statement *******************************
 
 price = 1000000
 has_good_credit = False
@@ -136,7 +142,7 @@ else:
    down_payment = price * 0.2
 print(f'down payment: {down_payment}')
 
-# ***************************************************
+# ********************** To check person is eligible for loan or not using if and else statement*****************************
 
 has_high_income = True
 has_good_credit = False
@@ -145,16 +151,7 @@ if has_high_income and has_good_credit:
 else:
   print('Not eligible for loan')
 
-# ***************************************************
-
-has_high_income = True
-has_good_credit = True
-if not has_high_income and not has_good_credit:
-  print('Not eligible for loan')
-else:
-  print('Eligible for loan')
-
-# ***************************************************
+# ******************* Weather forecast using temperature (comparison operator) ********************************
 
 temp = input('Temperature: ')
 if temp > '30':
@@ -164,7 +161,7 @@ elif temp < '30':
 else:
    print("It's neithor a hot nor a cold day")
 
-# ***************************************************
+# *********************** Limiting the imput 'Name' to required characters ****************************
 
 name = input('Name: ')
 if len(name) < 3:
@@ -174,7 +171,7 @@ elif len(name) > 50:
 else:
   print('name looks good')
 
-# ***************************************************
+# ******************** weight conversion *******************************
 
 weight = int(input('Weight: '))
 unit = input('in (lb) or (kg): ')
@@ -185,7 +182,7 @@ elif unit == 'kg':
     weight_kg = (weight) / 0.45
     print(f'You are {weight} pounds.')
 
-# ***************************************************
+# ******************** simple exercise using while loop *******************************
 
 i = int(input('i: '))
 while i > 10:
@@ -193,7 +190,7 @@ while i > 10:
   i = i - 2
 print('done')
 
-# ***************************************************
+# ******************** guessing the correct number *******************************
 
 secret_number = 9
 guess_count = 0
@@ -207,7 +204,7 @@ while guess_count < guess_limit:
 else:
   print('Sorry you failed')
 
-# ***************************************************
+# ******************* List methods ********************************
 
 letters = ['a', 'b', 'c', 'd']
 numbers = [5, 6, 1, 10, 2, 0, 4, 8, 9, 3, 7]
@@ -252,21 +249,21 @@ print(letters)
 letter_index = letters.index('a')
 print(letter_index)
 
-# ***************************************************
+# ********************* creating list ******************************
 
 lists = ['apple', 'banana', 'strawberry', 'orange', 'kiwi']
 letters = 'a, b, c, d, e, f, g, h, i'
 numbers = [-3, -2, -1, 0, 1, 2, 3]
 print(f'{letters} is an alphabet but {numbers} are numbers.')
 
-# ***************************************************
+# *********************** creating dictionary ****************************
 
 dictionary = dict(name='Ramya', age=22, gender='female' )
 d = {"ff":3, "gg":432}
 a = 1, 2, 3
 print(a)
 
-# ***************************************************
+# ********************** keyword argument *****************************
 
 def kk(name, **x):
     print(x)
@@ -274,24 +271,24 @@ def kk(name, **x):
 
 kk(age=5, name=88,ll=98897)
 
-# ***************************************************
+# ********************* keyword argument ******************************
 
 def kk(a, b, *c):
     print(a, b, *c)
 
 kk(1,2,3,4,5)
 
-# ***************************************************
+# ********************** range method *****************************
 
 for z in range(0, 10):
     space = ' ' * z
     print(space + (9 - z) * ' *')
 
-# ***************************************************
+# ************ Palindrome function (to check whether the given word is palindrome or not) *******************
 
 def palindrome(z):
-    b = z[::-1]
-    if z == b:
+    reverse_z = z[::-1]
+    if z == reverse_z:
          return True
     else:
          return False
@@ -301,69 +298,83 @@ a = 'apple'
 print(palindrome('malayalam'))
 print(palindrome('ramya'))
 
-# ***************************************************
-
-def fun(x):
-    reverse_a = a[::-1]
-    if a == reverse_a:
-        return True
-    else:
-        return False
-y = fun(a)
-print(y)
-
-# ***************************************************
-
+# ****************** Data types *********************************
+# list
 a = [1, 2, 3, 4, 5]
 y = 1
 for x in a:
     y = x * y
 print(y)
 
+# set
 b = {1,2,3,4,5}
 print(sum(b))
 
+# numeric
 c = 1,2,3,4,5
 print(sum(c))
 
+# tuple
 d = (1,2,3,4,5)
 print(sum(d))
 
-# ***************************************************
+# ******************* calculate sum of unique numbers from given list of numbers ********************************
 
-name = 'my name Is Ramya'
-print(name.upper())
-print(name.lower())
-print(name.casefold())
-print(name.title())
-print(name.capitalize())
-b = name.replace('Ramya', 'Kiran')
-print(b)
-
-# ***************************************************
-
-def myfun(x):
-    unique = set(x)
+def sum_of_unique_numbers(numbers):
+    unique = set(numbers)
     z = sum(unique)
     return z
-a = myfun(y)
-print(a)
 
-# ***************************************************
 
-my = [1,2,3,3,2,1,1,5,8]
-unique = set(my)
-print(set(my))
-y = sum(unique)
-print(y)
-text = ['kiran', 'kharvi']
-text1 = set(text)
-print(text1)
+list_numbers = [1,2,3,3,2,1,1,5,8]
+print(sum_of_unique_numbers(list_numbers))
 
-# ***************************************************
+# ***************** Check whether a number is persent in list of numbers **********************************
+
+def fun(x, y):
+    for item in x:
+        if y == item:
+            return True
+    return False
+
+
+c = fun([1,2,3,4,5], 2)
+print(c)
+
+# ******************* find the minimum number ********************************
+
+num = [2,11,12,14,1,9,22]
+
+def fun(x):
+    min_num = 100
+    for y in x:
+        if y < min_num:
+            min_num = y
+    return min_num
+
+
+z = fun(num)
+print(z)
+
+# ******************* simple while loop exercise ********************************
+
+a = int(input('number: '))
+while a != 0:
+    print('$')
+    a = int(input('number: '))
+    break
+
+# ******************* print dictionary items ********************************
+
+word = {'name':'Ramya', 'age': 20, 'place': 'kundapur'}
+for x,y in word.items():
+    print(x,y)
+
+# ****************** Patterns *********************************
 # 1
 # 1 2
 # 1 2 3
+# 1 2 3 4
 # 1 2 3 4 5
 
 def fun():
@@ -373,76 +384,49 @@ def fun():
          print(b)
 fun()
 
-# ***************************************************
-
-def fun(x, y):
-    for item in x:
-        if y == item:
-            return True
-    return False
-c = fun([1,2,3,4,5], 2)
-print(c)
-
-# ***************************************************
-
-def fun():
-    for x in num:
-        if x > 0:
-            print(x)
-fun()
-
-num = [2,11,12,14,1,9,22]
-
-# ***************************************************
-
-def fun(x):
-    min_num = 100
-    for y in x:
-        if y < min_num:
-            min_num = y
-    return min_num
-z = fun(num)
-print(z)
-
-# ***************************************************
-
-a = int(input('number: '))
-while a != 0:
-    print('$')
-    a = int(input('number: '))
-    break
-
-# ***************************************************
-
-a = 'None'
-while a:
-    print('$')
-word = {'name':'Ramya', 'age': 20, 'place': 'kundapur'}
-for x,y in word.items():
-    print(x,y)
-
-# ***************************************************
-
+# ******************** Patterns *******************************
+# 1  
+# 0 2  
+# 0 1 3  
+# 0 1 2 4  
+# 0 1 2 3 
 for x in range(1,5):
     print(x, ' ')
     for y in range(x):
         print(y,end=' ')
 
-# ***************************************************
+# ********************** Patterns *****************************
+# 1
+# 22
+# 333
+# 4444
+# 55555
 
 for x in range(1,6):
     for y in range(x):
         print(x,end='')
     print()
 
-# ***************************************************
+# *********************** Patterns ****************************
+# 12345
+# 12345
+# 12345
 
 for ooo in range(3):
     for a in range(1,6):
         print(a,end='')
     print()
 
-# ***************************************************
+# ****************** Patterns *********************************
+# 1
+# 22
+# 333
+# 4444
+# 55555
+# 666666
+# 7777777
+# 88888888
+# 999999999
 
 def fun(a):
     for b in range(1,a+1):
@@ -451,7 +435,36 @@ def fun(a):
         print()
 fun(9)
 
-# ***************************************************
+# ************************ Patterns ***************************
+# 1 
+# 2 2 
+# 3 3 3 
+# 4 4 4 4 
+# 5 5 5 5 5 
+
+def fun(a):
+    for b in range(1,a+1):
+        for c in range(b):
+            print(b, end=' ')
+        print()
+
+fun(5)
+
+# ********************** Patterns # TO GET '#' IN 4 TIMES IN 4 LINES:*****************************
+# # # # 
+# # # # 
+# # # # 
+# # # #
+
+def fun(x):
+    for a in range (4):
+        for y in range(4):
+            print('#',end=' ')
+        print()
+
+fun(4)
+
+# ******************** Check whether the number is even or odd number *******************************
 
 def fun():
     b = int(input('number: '))
@@ -466,7 +479,7 @@ def fun():
 
 fun()
 
-# ***************************************************
+# ******************** Mathematical operator function *******************************
 
 def fun():
     z = 1
@@ -489,34 +502,16 @@ def fun():
         z = int(input('\n[Enter 1 if yes: 0 if No]\nDo you want to continue?: '))
     print('\nCompleted')
 
-# ***************************************************
 
-def fun(a):
-    for b in range(1,a+1):
-        for c in range(b):
-            print(b, end=' ')
-        print()
+fun()
 
-fun(5)
-
-# ***************************************************
-
-# TO GET '#' IN 4 TIMES IN 4 LINES:
-def fun(x):
-    for a in range (4):
-        for y in range(4):
-            print('#',end=' ')
-        print()
-
-fun(4)
-
-# ***************************************************
+# ****************** Exponential *********************************
 
 r = 2 ** 3 ** 4
 print(r)
 print(2 ** 81)
 
-# ***************************************************
+# ******************** check the changes in the id(reference) of integer *******************************
 
 def fun_1(a):
     a = 3
@@ -529,7 +524,7 @@ print(id(a), 'after', a)
 
 print()
 
-# ***************************************************
+# **************** check the changes in the id(reference) of list ***********************************
 
 def fun_2(b):
     b.append(25)
@@ -541,42 +536,24 @@ print(id(b), 'before', b)
 fun_2(b)
 print(id(b), 'after', b)
 
-# ***************************************************
-def fun_2(val):
-    z = val + [50]
-    print(val)
+# ***************** Calculate count of even and odd numbers in list of numbers **********************************
 
-# ***************************************************
-
-def fun(val):
-    b = val.append(30)
-    a = val.pop()
-    print(a)
-
-n = [10]
-print(n)
-
-fun_2(n)
-fun(n)
-print(n)
-
-# ***************************************************
-
-def fun(a):
+def count_even_and_odd_numbers(a):
     count_even = count_odd = 0
-    for x in a:
-        if x % 2 == 0:
+    for number in a:
+        if number % 2 == 0:
             count_even += 1
         else:
             count_odd = count_odd + 1
     return count_even, count_odd
 
-numbers = [1,2,4,6,5,3,7]
-y, z = fun(numbers)
-print('Even =', y)
-print('Odd =', z)
 
-# ***************************************************
+list_numbers = [1,2,4,6,5,3,7]
+even_num, odd_num = count_even_and_odd_numbers(list_numbers)
+print('Even =', even_num)
+print('Odd =', odd_num)
+
+# ******************* list append method ********************************
 
 def fun(a):
     a.append(3)
@@ -584,27 +561,25 @@ num = [1,2]
 fun(num)
 print(num)
 
-# ***************************************************
+# ********************* list indexing ******************************
 
-# list indexing
 num = [1,2,3,4,5,6,7,8,9,10]
 print(num[0:5][::-1])
 print(num[5:])
 
-# ***************************************************
+# ******************** Nested list *******************************
 
-# Nested list
 x = [1,2,3,[4,5,6,[7,8,9]]]
 print(x[3][3][1])
 
+# ********************* lambda function ******************************
 
 t = [(1,9),(3,4),(3,5)]
 t.sort(key=lambda x: x[1])
 print(t)
 
-# ***************************************************
+# ******************* calculate the count of alphabhets in given list ********************************
 
-d = {'name': 'Ramya', 'age': 20, 'place': 'kpur'}
 l_num = ['a','b','c','a','d','e','b','c']
 def fun_num(a):
     b = {}
@@ -619,18 +594,15 @@ def fun_num(a):
 r = fun_num(l_num)
 print(r)
 
-# ***************************************************
+# ***************** Check whether given words present in given string **********************************
 
 m = 'My name is Ramya'
 def fun(a, b):
     if b in a:
-        y = a.find(b)
-        z = y + len(b) - 1
         return True
-fun(m,'Ramya')
 
-a = ['R','a','R','l','o',' ','I','a','m',' ', 'R','a','m','y','a']
-b = 'Ramya'
+
+fun(m,'Ramya')
 
 # ***************************************************
 
@@ -651,12 +623,11 @@ def fun(a,b):
                 return i,next_index - 1
     return 'b is not in the list a'
 
-z = fun(a,b)
+z = fun(a=['w', 'r', 't', 'q', 'u'], b='u')
 print(z)
 
-# ***************************************************
+# ********************** STACK *****************************
 
-# STACK
 l_num = []
 def fun(a):
     q1 = 1
@@ -688,9 +659,8 @@ def fun(a):
 result = fun(l_num)
 print(result)
 
-# ***************************************************
+# *********************** QUEUE ****************************
 
-# QUEUE
 l_num = []
 def fun(a):
     n = 5
@@ -722,7 +692,7 @@ def fun(a):
 result = fun(l_num)
 print(result)
 
-# ***************************************************
+# ******************* try, except ********************************
 
 def fun(a,b):
     try:
@@ -734,7 +704,7 @@ def fun(a,b):
         print(c)
 fun(2,0)
 
-# ***************************************************
+# ********************* Python class ******************************
 
 class Person:
   def __init__(self, name, age):
@@ -746,7 +716,7 @@ p1 = Person("John", 36)
 print(p1.name)
 print(p1.age)
 
-# ***************************************************
+# ********************* Simple Inheritance ******************************
 
 class A(object):
     def __init__(self, something):
@@ -762,7 +732,7 @@ class B(A):
 
 obj = B("Something")
 
-# ***************************************************
+# ********************** Single class exercise *****************************
 
 class BasicClass:
     theVariable = 1
@@ -775,7 +745,7 @@ class ExampleClass:
 x = ExampleClass()
 print(x.name,x.age,x.place)
 
-# ***************************************************
+# ********************** Birthday age *****************************
 
 class BirthdayBoy(object):
     def __init__(self, name, age):
@@ -796,7 +766,7 @@ print(id(x.age))
 
 print(x.age)
 
-# ***************************************************
+# ************************ Salesperson class ***************************
 
 class Salesperson:
     sales = 0
@@ -814,7 +784,7 @@ x = Salesperson('Ramya', 'Kharvi')
 x.makesale(500)
 x.salesreport()
 
-# ***************************************************
+# *********************** PPython class ****************************
 
 class Vehicle:
     def __init__(self,maxspeed,mileage):
@@ -824,7 +794,7 @@ class Vehicle:
 x = Vehicle(200, 20)
 print(x.maxspeed, x.mileage)
 
-# ***************************************************
+# *********************** Single Inheritance ****************************
 
 class Vehicle:
     def __init__(self,name,maxspeed,mileage):
@@ -839,7 +809,7 @@ a = Vehicle('School vehicle',250,25)
 b = Bus('School Volvo',180, 12)
 print(f'Vehicle Name:{b.name}\nSpeed: {b.maxspeed}\nMileage: {b.mileage}')
 
-# ***************************************************
+# ********************** Hierarchial Inheritance *****************************
 
 class Vehicle:
     color = 'White'
@@ -865,7 +835,7 @@ print(f'Vehicle Name: {b.name}, Color: {b.color}, Maxspeed: {b.maxspeed}, Mileag
 print(f'Vehicle Name: {c.name}, Color: {c.color}, Maxspeed: {c.maxspeed}, Mileage: {c.mileage}')
 print(f'Vehicle Name: {d.name}, Color: {d.color}, Maxspeed: {d.maxspeed}, Mileage: {d.mileage}')
 
-# ***************************************************
+# ************************ Single Inheritance ***************************
 
 class Vehicle:
     def __init__(self, name):
