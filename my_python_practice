@@ -25,15 +25,15 @@ matrix = [
 ]
 print(matrix[2][1])
 
-# ***************************************************
+# **************** Convert numbers into words ***********************************
 
-phone = input('Phone: ')
+numbers = input('Enter any numbers: ')
 in_words = {0: 'Zero', 1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five',
             6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine'}
-for number in phone:
+for number in numbers:
   print(in_words[int(number)], end = ' ')
 
-# ***************************************************
+# ****************** covert symbolic message to emoji *********************************
 
 def emoji_converter(message):
     msg = message.split(' ')
@@ -43,10 +43,11 @@ def emoji_converter(message):
         output += dict_emojis.get(word, word) + ' '
     return output
 
+
 my_message = input('msg> ')
 print(emoji_converter(my_message))
 
-# ***************************************************
+# ************** My introduction ************************
 
 def my_intro(my_name, my_age):
     print("hi ", my_name, my_age)
@@ -54,7 +55,7 @@ def my_intro(my_name, my_age):
 my_intro("kiran", 55)
 my_intro("Ramya", 88)
 
-# ***************************************************
+# ******************** string formatting ****************************
 
 def school_details(my_name, standard, roll_no):
    print(f'Iam {my_name} studying in {standard} std. My roll no is {roll_no}')
